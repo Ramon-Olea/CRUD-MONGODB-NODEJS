@@ -1,9 +1,15 @@
 <%- include('template/header') %>
 
 
-    <h1><%= listaMascotas %></h1>
+<h1><%= listaMascotas %></h1>
 
-    <table class="table">
+
+    <div class="col-6 offset-6 p-5">
+
+      <a type="button" class="btn btn-outline-success" href="/mascotas/crear">Crear Registro</a>
+
+    </div>
+    <table class="table text-center table-striped table-bordered">
         <thead>
           <tr>
             <th scope="col">#id</th>
@@ -20,10 +26,18 @@
                     <th scope="row"><%= mascota.id %></th>
                     <td><%= mascota.nombre %> </td>
                     <td><%= mascota.descripcion %></td>
-                    <td>@mdo</td>
+                    <td>  <a
+                      class="btn btn-warning btn-sm"
+                      href="mascotas/<%= mascota.id %>"
+                    >
+                      Editar
+                    </a></td>
                   </tr>
             <% }) %>
         <% } %>
         </tbody>
       </table>
+  
 <%- include('template/footer') %>
+
+
